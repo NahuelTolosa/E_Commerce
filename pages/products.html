@@ -6,235 +6,239 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Products</title>
 </head>
 <body>
-    <header class="">
-        <div class="">
+    <header class="container-fluid nav">
+        <div class="col-md-2 text-center">
             <p>Buscar<p>
         </div>
-        <div class="">
+        <div class="col-md-8 text-center">
             <img src="../img/logo.png" alt="Logo del e-commerce">
         </div>
-        <div class="">
-            <a href="log-in.html"><img src="../img/icons/iconmonstr-user-20-48.png" alt=""></a>
+        <div class="col-md-2 text-center">
+            <a href="pages/log-in.html"><img src="../img/icons/iconmonstr-user-20-48.png" alt=""></a>
         </div>
-        
     </header>
-    <nav class="">
-        <ul class="">
-            <li class=""><a href="../index.html" class="">Inicio</a></li>
-            <li class=""><a href="products.html" class="">Todos los productos</a></li>
-            <li class=""><a href="about-us.html" class="">Sobre Nosotros</a></li>
-            <li class=""><a href="contact.html" class="">Contacto</a></li>
+    <nav class="container">
+        <ul class="nav">
+            <li class="nav-item col-md-3 text-center"><a href="../index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item col-md-3 text-center"><a href="products.html" class="nav-link">Todos los productos</a></li>
+            <li class="nav-item col-md-3 text-center"><a href="about-us.html" class="nav-link">Sobre Nosotros</a></li>
+            <li class="nav-itemv col-md-3 text-center"><a href="contact.html" class="nav-link">Contacto</a></li>
         </ul>
     </nav>
-    <main class="">
-        <div class="">
-            <h4>Categorias</h4>
-            <ul>
-                <li><a href="categories/hoodies.html" class="">Buzos</a></li>
-                <li><a href="categories/shirts.html" class="">Camisas</a></li>
-                <li><a href="categories/jackets.html" class="">Camperas</a></li>
-                <li><a href="categories/pants.html" class="">Pantalones</a></li>
-                <li><a href="categories/t-shirts.html" class="">Remeras</a></li>
-            </ul>
+    <main class="container">
+        <div class="row align-items-start">
+            <div class="col-2">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="categories/hoodies.html" class="">Buzos</a></li>
+                    <li><a href="categories/shirts.html" class="">Camisas</a></li>
+                    <li><a href="categories/jackets.html" class="">Camperas</a></li>
+                    <li><a href="categories/pants.html" class="">Pantalones</a></li>
+                    <li><a href="categories/t-shirts.html" class="">Remeras</a></li>
+                </ul>
+            </div>
+
+            <section class="col-10">
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo001/22d0a714-9859-4140-a0fd-c5d17cb6a1e31-bb6268496dbb4b8d1b16216170415630-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 01</h4>
+                        <p>$ 3.000</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camisas/camisa001/6ed679f0-fdd7-4f2f-a978-1cdeb4294ab11-bb0373d0826538460615877659766197-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Camisa 01</h4>
+                        <p>$2.500</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camperas/campera001/5f98d1b0-083a-4545-a7e0-e1edbe780bdf1-824af9ad466329cb3d16216115618287-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Campera 01</h4>
+                        <p>$3.500</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/remeras/remera001/482b65f9-7973-4d50-a511-e0c2947b97f61-eb73e22ff365d07a1416216217268011-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Remera 01</h4>
+                        <p>$1.800</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo002/549ead71-f054-4c48-a35c-634b625cf2db1-c14a6655b34a22aa8d16211050004471-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 02</h4>
+                        <p>$3.750</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camperas/campera002/56936618-807f-4034-b052-1ef808ba1fef1-f0154c376b105887c716216103548297-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Campera 02</h4>
+                        <p>$5.000</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/remeras/remera002/e83efd19-1054-46e4-bb48-194580db59201-413b4757c4181e98fb16213681408027-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Remera 02</h4>
+                        <p>$1.800</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo003/b60da305-ab1d-45aa-8058-5cfd282ec8161-b92ea99a0cf890774016216222085237-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 03</h4>
+                        <p>$3.600</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camperas/campera003/3ec2ca5b-7068-4094-8040-129e329645ad1-58bb037f6f5d1c9bec16216109347709-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Campera 03</h4>
+                        <p>$4.780</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/pantalones/pantalon001/0e8c43b4-8c7a-4177-a193-12afd5bbc5601-9d86da58fd4a9dc49215877607069197-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Pantalon 01</h4>
+                        <p>$2.560</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/remeras/remera003/76dae331-e6ba-4a67-ab56-f17cfcc093381-f7dbc3ba3752449f7016306171388678-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Remera 03</h4>
+                        <p>$1.320</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo004/31b63598-b453-4609-bfe0-3f7989954d171-0bf65ab3c4a8f2d2aa15933689229284-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 03</h4>
+                        <p>$3.600</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camisas/camisa002/raya-nueva1-98c58b83aa882d837f15878491809656-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Camisa 02</h4>
+                        <p>$2.500</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/camperas/campera004/rustico-melange11-648641a21732359a3a15936374010918-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Campera 04</h4>
+                        <p>$3.990</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/pantalones/pantalon002/080b49ee-e804-45bb-b3a9-0d6e06f2c5971-d3809268a3012c124e15984626462867-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Pantalon 02</h4>
+                        <p>$2.690</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/pantalones/pantalon003/fc5b9021-4378-467c-80cd-bfb5c6f3e2011-318638e9a7d4181e0215944185441982-640-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Pantalon 03</h4>
+                        <p>$2.000</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/remeras/remera004/e68f4065-ef44-4e7c-933e-4ac3129073911-d183e834f9b81fe28f16306178120082-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Remera 04</h4>
+                        <p>$1.990</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo005/5e5b6aae-66bb-4398-abda-5b5f421123fb1-f05fdafd5a1814079a15904311830581-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 05</h4>
+                        <p>$3.030</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/pantalones/pantalon004/411-66f098b6763139001415881125060453-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Pantalon 03</h4>
+                        <p>$3.290</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/buzos/buzo006/whatsapp-image-2021-06-03-at-16-44-431-28903bebe6265791a016230923183086-480-0.jpeg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Buzo 06</h4>
+                        <p>$3.860</p>
+                    </div>
+                </div>
+                <div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="../img/ropa/pantalones/pantalon001/0e8c43b4-8c7a-4177-a193-12afd5bbc5601-9d86da58fd4a9dc49215877607069197-480-0.jpg" alt="">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>Pantalon 04</h4>
+                        <p>$2.660</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    
-        <section class="">
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo001/22d0a714-9859-4140-a0fd-c5d17cb6a1e31-bb6268496dbb4b8d1b16216170415630-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 01</h4>
-                    <p>$ 3.000</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camisas/camisa001/6ed679f0-fdd7-4f2f-a978-1cdeb4294ab11-bb0373d0826538460615877659766197-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Camisa 01</h4>
-                    <p>$2.500</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camperas/campera001/5f98d1b0-083a-4545-a7e0-e1edbe780bdf1-824af9ad466329cb3d16216115618287-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Campera 01</h4>
-                    <p>$3.500</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/remeras/remera001/482b65f9-7973-4d50-a511-e0c2947b97f61-eb73e22ff365d07a1416216217268011-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Remera 01</h4>
-                    <p>$1.800</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo002/549ead71-f054-4c48-a35c-634b625cf2db1-c14a6655b34a22aa8d16211050004471-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 02</h4>
-                    <p>$3.750</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camperas/campera002/56936618-807f-4034-b052-1ef808ba1fef1-f0154c376b105887c716216103548297-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Campera 02</h4>
-                    <p>$5.000</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/remeras/remera002/e83efd19-1054-46e4-bb48-194580db59201-413b4757c4181e98fb16213681408027-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Remera 02</h4>
-                    <p>$1.800</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo003/b60da305-ab1d-45aa-8058-5cfd282ec8161-b92ea99a0cf890774016216222085237-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 03</h4>
-                    <p>$3.600</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camperas/campera003/3ec2ca5b-7068-4094-8040-129e329645ad1-58bb037f6f5d1c9bec16216109347709-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Campera 03</h4>
-                    <p>$4.780</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/pantalones/pantalon001/0e8c43b4-8c7a-4177-a193-12afd5bbc5601-9d86da58fd4a9dc49215877607069197-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Pantalon 01</h4>
-                    <p>$2.560</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/remeras/remera003/76dae331-e6ba-4a67-ab56-f17cfcc093381-f7dbc3ba3752449f7016306171388678-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Remera 03</h4>
-                    <p>$1.320</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo004/31b63598-b453-4609-bfe0-3f7989954d171-0bf65ab3c4a8f2d2aa15933689229284-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 03</h4>
-                    <p>$3.600</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camisas/camisa002/raya-nueva1-98c58b83aa882d837f15878491809656-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Camisa 02</h4>
-                    <p>$2.500</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/camperas/campera004/rustico-melange11-648641a21732359a3a15936374010918-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Campera 04</h4>
-                    <p>$3.990</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/pantalones/pantalon002/080b49ee-e804-45bb-b3a9-0d6e06f2c5971-d3809268a3012c124e15984626462867-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Pantalon 02</h4>
-                    <p>$2.690</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/pantalones/pantalon003/fc5b9021-4378-467c-80cd-bfb5c6f3e2011-318638e9a7d4181e0215944185441982-640-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Pantalon 03</h4>
-                    <p>$2.000</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/remeras/remera004/e68f4065-ef44-4e7c-933e-4ac3129073911-d183e834f9b81fe28f16306178120082-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Remera 04</h4>
-                    <p>$1.990</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo005/5e5b6aae-66bb-4398-abda-5b5f421123fb1-f05fdafd5a1814079a15904311830581-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 05</h4>
-                    <p>$3.030</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/pantalones/pantalon004/411-66f098b6763139001415881125060453-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Pantalon 03</h4>
-                    <p>$3.290</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/buzos/buzo006/whatsapp-image-2021-06-03-at-16-44-431-28903bebe6265791a016230923183086-480-0.jpeg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Buzo 06</h4>
-                    <p>$3.860</p>
-                </div>
-            </div>
-            <div class="img-containter">
-                <div class="img-containter__img">
-                    <img src="../img/ropa/pantalones/pantalon001/0e8c43b4-8c7a-4177-a193-12afd5bbc5601-9d86da58fd4a9dc49215877607069197-480-0.jpg" alt="">
-                </div>
-                <div class="img-containter__info">
-                    <h4>Pantalon 04</h4>
-                    <p>$2.660</p>
-                </div>
-            </div>
-        </section>
+        
     </main>
-    <footer class="">
+    <footer class="container text-center">
         <h3>Social Media</h3>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
