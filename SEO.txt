@@ -1,0 +1,8 @@
+SEO
+
+»Sentido semántico al sitio utilizando etiquetas <header>,<nav>,<main>,<section> y <footer>
+»Se define el lenguaje de la página en español
+»Etiqueta <title> en el head con una frase clave
+»Etiqueta <meta> para agregar palabras clave
+»Un solo <h1> con el titulo principal del sitio
+»Breve descripción de todas las imágenes con el atributo "alt"
