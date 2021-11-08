@@ -19,6 +19,10 @@
     --gradiant: linear-gradient(var(--color8), var(--color7));
 }
 
+.hidden{
+    display: none;
+}
+
 .header, .footer{
     background: var(--gradiant);
     color: var(--color3);
