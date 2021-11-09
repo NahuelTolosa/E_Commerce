@@ -11,28 +11,81 @@
     </title>
 </head>
 <body>
-    <header class="container-fluid header">
-        <div class="row align-items-center">
-            <div class="col-md-2 text-center header__search">
-                <p>Buscar<p>
+    <header class="container-fluid container-sm-fluid header">
+        <div class="row align-items-center header-images">
+            <div class="col-md-3 text-center header__cart">
+                <img src="../img/icons/carrito.png" alt="">
             </div>
-            <div class="col-md-8 text-center header__logo">
-                <img src="../img/logo2.png" alt="Logo del e-commerce">
+            <div class="col-md-6 text-center header__logo">
+                <div>
+                    <img src="../img/logo.png" alt="Logo del e-commerce">
+                </div>
             </div>
-            <div class="col-md-2 text-center header__user">
+            <div class="col-md-3 text-center header__user">
                 <a href="log-in.html"><img src="../img/icons/iconmonstr-user-20-48.png" alt=""></a>
             </div>
         </div>
-        
+        </div class="hidden">
+        <h1 class="hidden">Venta de indumentaria masculina</h1>
+        </div>
     </header>
-    <nav class="container nav-bar shadow">
-        <ul class="nav nav-list paddin-top-bottom-15">
-            <a href="../index.html" class="link nav-item col-md-3 text-center nav-list__item"><li class="">Inicio</li></a>
-            <a href="products.html" class="link nav-item col-md-3 text-center nav-list__item"><li class="">Todos los productos</li></a>
-            <a href="about-us.html" class="link nav-item col-md-3 text-center nav-list__item"><li class="">Sobre Nosotros</li></a>
-            <a href="contact.html" class="link nav-item col-md-3 text-center nav-list__item"><li class="">Contacto</li></a>
-        </ul>
+    <nav>
+        <!-- Nav Responsive -->
+        <div class="nav-bar-responsive shadow">
+            <div class="navbar navbar-light bg-light container-md container-fluid">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú de opciones</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="products.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about-us.html">Sobre Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav default -->
+        <div class="container nav-bar shadow">
+            <ul class="nav-list list paddin-top-bottom-15">
+                <a href="../index.html" class="link text-center nav-list__item">
+                    <li class="">Inicio</li>
+                </a>
+                <a href="products.html" class="link text-center nav-list__item">
+                    <li class="">Todos los productos</li>
+                </a>
+                <a href="about-us.html" class="link text-center nav-list__item">
+                    <li class="">Sobre Nosotros</li>
+                </a>
+                <a href="contact.html" class="link text-center nav-list__item">
+                    <li class="">Contacto</li>
+                </a>
+            </ul>
+        </div>
     </nav>
+
     <main class="container main-area paddin-top-bottom-20 shadow">
             <p><span class="bold">E-Commerce</span> tiene como objetivo la comercialización de prendas de vestir masculinas con un estilo urbano y moderno. Ofrecemos ropa cómoda y de muy buena calidad.</p>
             <p>En nuestras tienda virtual encontraras siempre un portafolio de productos y servicios enfocados a la satisfacción del hombre que desea sentirse cómodo y a la moda.</p>
