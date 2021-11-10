@@ -13,7 +13,7 @@
     <header class="container-fluid container-sm-fluid header">
         <div class="row align-items-center header-images">
             <div class="col-md-3 text-center header__cart">
-                <img src="../img/icons/carrito.png" alt="">
+                <span class="iconify cart" data-icon="ant-design:shopping-cart-outlined"></span>
             </div>
             <div class="col-md-6 text-center header__logo">
                 <div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-md-3 text-center header__user">
-                <a href="log-in.html"><img src="../img/icons/iconmonstr-user-20-48.png" alt=""></a>
+                <a href="log-in.html" class="link"><span class="iconify account" data-icon="carbon:user-avatar"></span></a>
             </div>
         </div>
         </div class="hidden">
@@ -293,9 +293,20 @@
         </div>
         
     </main>
-    <footer class="text-center footer">
-        <h3>Social Media</h3>
+    <footer class="conteinet-fluid footer">
+        <h3 class="text-center">Social Media</h3>
+        <ul class="redes">
+            <li class="redes__item"><span class="iconify" data-icon="simple-icons:whatsapp"></span></li>
+            <li class="redes__item"><span class="iconify" data-icon="akar-icons:instagram-fill"></span></li>
+            <li class="redes__item"><span class="iconify" data-icon="akar-icons:facebook-fill"></span></li>
+            <li class="redes__item"><span class="iconify" data-icon="akar-icons:twitter-fill"></span></li>
+            <li class="redes__item"><span class="iconify" data-icon="cib:gmail"></span></li>
+        </ul>
+        <div class="derechos">
+            <p>2021 E-Commerce. Todos los derechos reservados</p>
+        </div>
     </footer>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

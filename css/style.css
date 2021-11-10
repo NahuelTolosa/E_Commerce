@@ -33,12 +33,27 @@
   top: 0px;
   left: 0px;
 }
+.header .header__cart .cart {
+  font-size: 3rem;
+  color: --color1;
+}
 .header .header__user {
   padding: 10px;
   width: fit-content;
   position: absolute;
   top: 0px;
   right: 0px;
+}
+.header .header__user .link {
+  color: var(--color1);
+  transition: all 200ms;
+}
+.header .header__user .link .account {
+  font-size: 3rem;
+  color: --color1;
+}
+.header .header__user .link .account:hover {
+  transform: scale(1.1);
 }
 
 .header, .footer {
@@ -49,6 +64,35 @@
 
 .footer {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .redes {
+  margin: auto;
+  width: 30%;
+  justify-content: center;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  --redes_items:5;
+}
+.footer .redes .redes__item {
+  text-align: center;
+  width: calc(100% / var(--redes_items));
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: all 150ms;
+}
+.footer .redes .redes__item:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.footer .derechos {
+  font-size: 0.7rem;
+  position: relative;
+  bottom: -70px;
 }
 
 .nav-bar-responsive {
@@ -176,7 +220,6 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  border: solid 1p green;
 }
 .form .form__field .input {
   margin: 10px 0px;
@@ -272,8 +315,12 @@
     order: 3;
   }
 
-  footer {
+  .footer {
     order: 4;
+  }
+  .footer .redes {
+    font-size: 1rem;
+    width: 100%;
   }
 
   .grid-section {
