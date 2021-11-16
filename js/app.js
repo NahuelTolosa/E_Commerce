@@ -46,52 +46,30 @@ let arrayRemeras = [    new Product('R01', 'Remera01', 'Remera con cuello negra 
 
 /*****************************************************FUNCIONES*****************************************************/
 
-function CreateImgElementsList(array,fragment){
+function CreateGridItems(array,fragment){
 
-    for (let i = 0; i < array.length; i++){
-
-        //Container de la imagenes y la info
-        let itemContainer = CreateElement("DIV", "img-containter", "", "");
-
-        //Div de la imagen
-        let itemImageContainer = CreateElement("DIV", "img-containter__img", "", "");
-        itemContainer.appendChild(itemImageContainer);
-
-        //Etiqueta de la imagen
-        let itemImage = CreateElement("IMG", "", "src", `${array[i].image}`);
-        itemImageContainer.appendChild(itemImage);
-
-        //Div de la informacion
-        let itemInfo = CreateElement("DIV", "img-containter__info", "","");
-        itemContainer.appendChild(itemInfo);
-
-        //Etiqueta del título
-        let itemTitle = CreateElement("H4", "", "", `${array[i].name}`);
-        itemInfo.appendChild(itemTitle);
-
-        //Etiqueta del precio
-        let itemPrice = CreateElement("P", "", "", `$${array[i].price}`);
-        itemInfo.appendChild(itemPrice);
+    array.forEach(element => {
+        let itemContainer = document.createElement("DIV");
+        itemContainer.classList.add("img-containter");
+        itemContainer.innerHTML = `
+            <div class="img-containter__img">
+                <img src="${element.image}" alt="${element.description}">
+            </div>
+            <div class="img-containter__info">
+                <h4>${element.name}</h4>
+                <p>$${element.price}</p>
+            </div>
+            <div class="img-container__option">
+                <button class="button">Ver más</button>
+                <button class="button">Comprar</button>
+            </div>
+        `;
 
         fragment.appendChild(itemContainer);
-    }
+    });
 
     return fragment;
-}
 
-function CreateElement(_tag, _class, _atribute, _content){
-    let element = document.createElement(_tag);
-
-    if(_class != '')
-        element.classList.add(_class);
-
-    if (_atribute != '')
-        element.setAttribute(_atribute, _content);
-        
-    else if (_content != '')
-        element.innerHTML = _content;
-
-    return element;
 }
 
 /************************************************MUESTRA POR PANTALLA************************************************/
@@ -99,9 +77,63 @@ function CreateElement(_tag, _class, _atribute, _content){
 let container = document.querySelector(".grid-area");
 
 let fragment = document.createDocumentFragment();
-fragment = CreateImgElementsList(arrayBuzos, fragment);
-fragment = CreateImgElementsList(arrayCamisas, fragment);
-fragment = CreateImgElementsList(arrayCamperas, fragment);
-fragment = CreateImgElementsList(arrayRemeras, fragment);
+
+CreateGridItems(arrayBuzos, fragment);
+CreateGridItems(arrayCamisas, fragment);
+CreateGridItems(arrayCamperas, fragment);
+CreateGridItems(arrayRemeras, fragment);
 
 container.appendChild(fragment);
+
+
+
+
+
+
+
+// function CreateImgElementsList(array,fragment){
+
+//     for (let i = 0; i < array.length; i++){
+
+//         //Container de la imagenes y la info
+//         let itemContainer = CreateElement("DIV", "img-containter", "", "");
+
+//         //Div de la imagen
+//         let itemImageContainer = CreateElement("DIV", "img-containter__img", "", "");
+//         itemContainer.appendChild(itemImageContainer);
+
+//         //Etiqueta de la imagen
+//         let itemImage = CreateElement("IMG", "", "src", `${array[i].image}`);
+//         itemImageContainer.appendChild(itemImage);
+
+//         //Div de la informacion
+//         let itemInfo = CreateElement("DIV", "img-containter__info", "","");
+//         itemContainer.appendChild(itemInfo);
+
+//         //Etiqueta del título
+//         let itemTitle = CreateElement("H4", "", "", `${array[i].name}`);
+//         itemInfo.appendChild(itemTitle);
+
+//         //Etiqueta del precio
+//         let itemPrice = CreateElement("P", "", "", `$${array[i].price}`);
+//         itemInfo.appendChild(itemPrice);
+
+//         fragment.appendChild(itemContainer);
+//     }
+
+// }
+
+// function CreateElement(_tag, _class, _atribute, _content){
+//     let element = document.createElement(_tag);
+
+//     if(_class != '')
+//         element.classList.add(_class);
+
+//     if (_atribute != '')
+//         element.setAttribute(_atribute, _content);
+
+//     else if (_content != '')
+//         element.innerHTML = _content;
+
+//     return element;
+// }

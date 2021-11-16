@@ -195,13 +195,18 @@
         }
     }
 
+    .img-container__option{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
 }
 
 .img-containter:hover{
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 10px 10px 30px -10px rgba(0, 0, 0, 0.452); //agregar mas sombra
-    transform: rotate(-.5deg);
+    transform: rotate(-.1deg);
 }
 
 .grid-section{
@@ -253,24 +258,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
-
-        .button{
-            width: 150px;
-            margin: 10px;
-            padding: 10px;
-            background-color: var(--color5);
-            border: 0px;
-            border-radius: 5px;
-            transition: all 50ms;
-        }
-
-        .button:hover{
-            transform: scale(1.01);
-            background-color: var(--color6);
-            cursor: pointer;
-        }
     }
+}
+
+.button{
+    font-size: .9rem;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--color5);
+    border: 0px;
+    border-radius: 5px;
+    transition: all 50ms;
+}
+
+.button:hover{
+    transform: scale(1.01);
+    background-color: var(--color6);
+    cursor: pointer;
 }
 
 .form__field .new-user .link{
