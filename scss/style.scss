@@ -35,7 +35,10 @@
         left: 0px;
         .cart{
             font-size: 3rem;
-            color: --color1;
+            color: var(--color1);
+        }
+        .cart:hover{
+            transform: scale(1.1);
         }
     }
     .header__user{
@@ -44,20 +47,21 @@
         position: absolute;
         top: 0px;
         right: 0px;
-        .link{
+        
+        .account{
+            font-size: 3rem;
             color: var(--color1);
-            transition: all 200ms;
-            .account{
-                font-size: 3rem;
-                color: --color1;
-            }
-            .account:hover{
-                transform: scale(1.1);
-            }
+        }
+        .account:hover{
+            transform: scale(1.1);
         }
         
     }
 
+}
+
+.link{
+    transition: all 200ms;
 }
 
 .header, .footer{

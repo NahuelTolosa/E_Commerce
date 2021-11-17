@@ -35,7 +35,10 @@
 }
 .header .header__cart .cart {
   font-size: 3rem;
-  color: --color1;
+  color: var(--color1);
+}
+.header .header__cart .cart:hover {
+  transform: scale(1.1);
 }
 .header .header__user {
   padding: 10px;
@@ -44,16 +47,16 @@
   top: 0px;
   right: 0px;
 }
-.header .header__user .link {
-  color: var(--color1);
-  transition: all 200ms;
-}
-.header .header__user .link .account {
+.header .header__user .account {
   font-size: 3rem;
-  color: --color1;
+  color: var(--color1);
 }
-.header .header__user .link .account:hover {
+.header .header__user .account:hover {
   transform: scale(1.1);
+}
+
+.link {
+  transition: all 200ms;
 }
 
 .header, .footer {

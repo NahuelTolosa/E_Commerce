@@ -1,0 +1,18 @@
+[
+    {
+        "id": "CI01",
+        "name": "Camisa01",
+        "description": "Camisa de jean negra",
+        "price": 2500,
+        "image": "img/ropa/CI01.jpg",
+        "isPopular": true
+    },
+    {
+        "id": "CI02",
+        "name": "Camisa02",
+        "description": "Camisa texturizada gris",
+        "price": 2500,
+        "image": "img/ropa/CI02.jpg",
+        "isPopular": false
+    }
+]

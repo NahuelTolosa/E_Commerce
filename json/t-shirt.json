@@ -1,0 +1,34 @@
+[
+    {
+        "id": "R01",
+        "name": "Remera01",
+        "description": "Remera con cuello negra con pequeños detalles blancos",
+        "price": 1800,
+        "image": "img/ropa/R01.jpg",
+        "isPopular": false
+    },
+    {
+        "id": "R02",
+        "name": "Remera02",
+        "description": "Remera ajustada gris con estampado pequeño rosa",
+        "price": 1800,
+        "image": "img/ropa/R02.jpg",
+        "isPopular": true
+    },
+    {
+        "id": "R03",
+        "name": "Remera03",
+        "description": "Remera suelta gris y azul",
+        "price": 1320,
+        "image": "img/ropa/R03.jpg",
+        "isPopular": false
+    },
+    {
+        "id": "R04",
+        "name": "Remera04",
+        "description": "Remera ajustada blanca y negra",
+        "price": 1990,
+        "image": "img/ropa/R04.jpg",
+        "isPopular": true
+    }
+]
