@@ -1,4 +1,5 @@
 function ReadJSON(json) {
+    
     for (const product of json) {
 
         if (jQuery(location).attr('href').includes(`index.html`)) {
@@ -8,6 +9,25 @@ function ReadJSON(json) {
             CreateNodes(product, `../${product.image}`);
 
     }
+}
+
+function ReadJSON() {
+    fetch('../json/db.json')
+        .then(res => res.json())
+        .then(json => {
+
+            for (const product of json) { /*CREA LOS ELEMENTOS LEIDOS*/
+
+                if (jQuery(location).attr('href').includes(`index.html`)) {
+                    if (product.isPopular)
+                        CreateNodes(product, `${product.image}`);
+                } else
+                    CreateNodes(product, `../${product.image}`);
+
+            }
+
+            BuyButtonListener(); /*AGREGA LOS EVENTOS A LOS BOTONES DE COMPRA*/
+        });
 }
 
 function CreateNodes(product,imgLocation){
@@ -31,7 +51,7 @@ function CreateNodes(product,imgLocation){
     
 }
 
-function BuyButtonListener(product) {
+function BuyButtonListener() {
     $(()=>{
 
         $(`.buy-button`).on('click',(e)=>{
