@@ -33,9 +33,15 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        .cart{
+        .cart-icon{
             font-size: 3rem;
             color: --color1;
+        }
+    }
+    div{
+        .link{
+            color: var(--color1);
+            transition: all 200ms;
         }
     }
     .header__user{
@@ -45,8 +51,6 @@
         top: 0px;
         right: 0px;
         .link{
-            color: var(--color1);
-            transition: all 200ms;
             .account{
                 font-size: 3rem;
                 color: --color1;
@@ -289,6 +293,72 @@
 
 .form__field .new-user .link:hover{
     transform: scale(1.02);
+}
+
+#cart-main{
+    min-height: 31vh;
+
+    .cart{
+        width: 100%;
+
+        tbody{
+            width: 100%;
+
+            .cart__row--head{
+                background-color: rgba(0, 0, 0, 0.157) !important;
+
+                .cart-item{
+                    border: 1px solid rgba(0, 0, 0, 0.027);
+                    padding: 15px;
+                }
+            }
+
+            .cart__row{
+                width: 100%;
+                --columns: 6;
+                background-color: rgba(0, 0, 0, 0.02);
+
+                .cart-item{
+                    width: calc(100% / var(--columns));
+                    text-align: center; padding: 20px 0;
+
+                    .plus-less-buttons{
+                        width: 70%;
+                        margin: auto;
+                        font-size: .9rem;
+                        display: flex;
+                        
+                        .plus-button, .less-button{
+                            color: #fff;
+                            margin: auto;
+                            padding: 5px 10px;
+                            width: fit-content;
+                            height: fit-content;
+                            border-radius: 5px;
+                        }
+                        .plus-button{
+                            background-color: green;
+                            margin-bottom: 1px;
+                            font-size: .93rem;
+                        }
+                        .less-button{
+                            background-color: red;
+                        }
+
+                    }
+                }
+
+            }    
+        }    
+    }
+}
+
+
+.empty-cart{
+    width: 100%;
+    margin: 0;
+    padding: 30px 0;
+    text-align: center;
 }
 
 

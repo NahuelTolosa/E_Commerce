@@ -19,7 +19,7 @@
     <header class="container-fluid container-sm-fluid header">
         <div class="row align-items-center header-images">
             <div class="col-md-3 text-center header__cart">
-                <a href="cart.html" class="link"><span class="iconify cart" data-icon="ant-design:shopping-cart-outlined"></span></a>
+                <a href="cart.html" class="link"><span class="iconify cart-icon" data-icon="ant-design:shopping-cart-outlined"></span></a>
             </div>
             <div class="col-md-6 text-center header__logo">
                 <div>
@@ -92,8 +92,78 @@
         </div>
     </nav>
 
-    <main class="container main-area shadow">
+    <main id="cart-main" class="container main-area shadow">
+
         <h3 class="h5 text-center paddin-top-bottom-20">Carrito de compras</h3>
+
+        <table class="cart">
+            <tbody class="cart-body">
+                
+                <tr class="cart__row cart__row--head">
+                    <th class="cart-item">#</th>
+                    <th class="cart-item">Producto</th>
+                    <th class="cart-item">Cantidad</th>
+                    <th class="cart-item">Acción</th>
+                    <th class="cart-item">Total</th>
+                    <th class="cart-item">Remover</th>
+                </tr>
+
+                <!-- <tr class="cart__row">
+                    <th class="cart-item">1</th>
+                    <th class="cart-item">Buzo01</th>
+                    <th class="cart-item">1</th>
+                    <th class="cart-item">
+                        <div class="plus-less-buttons">
+                            <div class="plus-button">
+                                <span class="iconify" data-icon="ant-design:plus-circle-outlined"></span>
+                            </div>
+                            <div class="less-button">
+                                <span class="iconify" data-icon="bi:dash-circle"></span>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="cart-item">$3600</th>
+                    <th class="cart-item"><span class="iconify" data-icon="clarity:trash-line"></span></th>
+                </tr>
+
+                <tr class="cart__row">
+                    <th class="cart-item">2</th>
+                    <th class="cart-item">Buzo02</th>
+                    <th class="cart-item">2</th>
+                    <th class="cart-item">
+                        <div class="plus-less-buttons">
+                            <div class="plus-button">
+                                <span class="iconify" data-icon="ant-design:plus-circle-outlined"></span>
+                            </div>
+                            <div class="less-button">
+                                <span class="iconify" data-icon="bi:dash-circle"></span>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="cart-item">$4000</th>
+                    <th class="cart-item"><span class="iconify" data-icon="clarity:trash-line"></span></th>
+                </tr>
+
+                <tr class="cart__row">
+                    <th class="cart-item">3</th>
+                    <th class="cart-item">Buzo03</th>
+                    <th class="cart-item">1</th>
+                    <th class="cart-item">
+                        <div class="plus-less-buttons">
+                            <div class="plus-button">
+                                <span class="iconify" data-icon="ant-design:plus-circle-outlined"></span>
+                            </div>
+                            <div class="less-button">
+                                <span class="iconify" data-icon="bi:dash-circle"></span>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="cart-item">$3000</th>
+                    <th class="cart-item"><span class="iconify" data-icon="clarity:trash-line"></span></th>
+                </tr> -->
+            </tbody>
+        </table>
+
     </main>
     <footer class="conteinet-fluid footer">
         <h3 class="text-center">Social Media</h3>
@@ -109,6 +179,7 @@
         </div>
     </footer>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/utils.js"></script>
     <script src="../js/functions.js"></script>
     <script src="../js/app.js"></script>
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>

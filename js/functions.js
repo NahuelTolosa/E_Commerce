@@ -12,12 +12,12 @@ function ReadJSON() {
 function CreateDinamicGrid(products){
     for (const product of products) { /*CREA LOS ELEMENTOS LEIDOS*/
 
-        if (jQuery(location).attr('href').includes(`index.html`)) {
+        if (IsOnIndexPage()) {
             if (product.isPopular)
                 CreateGridNodes(product, `${product.image}`);
         }
 
-        if (jQuery(location).attr('href').includes(`products.html`)){
+        if (IsOnProductsPage()){
             CreateGridNodes(product, `../${product.image}`);
         }
         
@@ -57,22 +57,74 @@ function BuyButtonListener() {
 }
 
 const AddToCart = item => {
-    console.log(item);
+    
     const product = {
-        id:         item.querySelector(`.buy-button`).id,
-        name:       item.querySelector(`h4`).textContent,
-        description:item.querySelector(`img`).alt,
-        price:      item.querySelector(`p`).textContent,
-        image:      item.querySelector(`img`).src,
-        quantity:     1
+        id:          item.querySelector(`.buy-button`).id,
+        name:        item.querySelector(`h4`).textContent,
+        description: item.querySelector(`img`).alt,
+        price:       GetIntPrice(item.querySelector(`p`).textContent),
+        image:       item.querySelector(`img`).src,
+        quantity:    1
     };
 
     if (cart.hasOwnProperty(product.id)){
-        product.amount = cart[product.id].amount + 1;
+        product.quantity = cart[product.id].quantity + 1;
     }
+
+    CartToLocalStorege();
 
     cart[product.id] = {...product};
 
-    // console.log(cart);
 }
 
+function CartToLocalStorege() {
+    localStorage.setItem(`${cart}`, JSON.stringify(cart));
+}
+
+
+function PrintCart(){
+    if (IsOnCartPage())
+        ($.isEmptyObject(localStorage.getItem(`cart`))) ? EmptyCartMessage() : CreateCartNodes();
+}
+
+function EmptyCartMessage() {
+    $(`#cart-main`).append(`<div class="paddin-top-bottom-20"><p class="empty-cart">El carrito está vacío.</p></div>`);
+}
+
+function CreateCartNodes() {
+
+    let i = 0;
+
+    for (const key in JSON.parse(localStorage.getItem(`cart`))) {
+        if (Object.hasOwnProperty.call(JSON.parse(localStorage.getItem(`cart`)), key)) {
+            const product = JSON.parse(localStorage.getItem(`cart`))[key];
+
+            $(`.cart-body`).append(`
+                <tr class="cart__row">
+                        <th class="cart-item">${i}</th>
+                        <th class="cart-item">${product.name}</th>
+                        <th class="cart-item">${product.quantity}</th>
+                        <th class="cart-item">
+                            <div class="plus-less-buttons">
+                                <div class="plus-button">
+                                    <span class="iconify" data-icon="ant-design:plus-circle-outlined"></span>
+                                </div>
+                                <div class="less-button">
+                                    <span class="iconify" data-icon="bi:dash-circle"></span>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="cart-item">$${product.price}</th>
+                        <th class="cart-item"><span class="iconify" data-icon="clarity:trash-line"></span></th>
+                    </tr>
+            `);
+
+        i++;
+
+        }
+    }
+}
+
+function GetIntPrice(price) {
+    return price.slice(1,price.lenght);
+}

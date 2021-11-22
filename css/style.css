@@ -33,9 +33,13 @@
   top: 0px;
   left: 0px;
 }
-.header .header__cart .cart {
+.header .header__cart .cart-icon {
   font-size: 3rem;
   color: --color1;
+}
+.header div .link {
+  color: var(--color1);
+  transition: all 200ms;
 }
 .header .header__user {
   padding: 10px;
@@ -43,10 +47,6 @@
   position: absolute;
   top: 0px;
   right: 0px;
-}
-.header .header__user .link {
-  color: var(--color1);
-  transition: all 200ms;
 }
 .header .header__user .link .account {
   font-size: 3rem;
@@ -263,6 +263,62 @@
 
 .form__field .new-user .link:hover {
   transform: scale(1.02);
+}
+
+#cart-main {
+  min-height: 31vh;
+}
+#cart-main .cart {
+  width: 100%;
+}
+#cart-main .cart tbody {
+  width: 100%;
+}
+#cart-main .cart tbody .cart__row--head {
+  background-color: rgba(0, 0, 0, 0.157) !important;
+}
+#cart-main .cart tbody .cart__row--head .cart-item {
+  border: 1px solid rgba(0, 0, 0, 0.027);
+  padding: 15px;
+}
+#cart-main .cart tbody .cart__row {
+  width: 100%;
+  --columns: 6;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+#cart-main .cart tbody .cart__row .cart-item {
+  width: calc(100% / var(--columns));
+  text-align: center;
+  padding: 20px 0;
+}
+#cart-main .cart tbody .cart__row .cart-item .plus-less-buttons {
+  width: 70%;
+  margin: auto;
+  font-size: 0.9rem;
+  display: flex;
+}
+#cart-main .cart tbody .cart__row .cart-item .plus-less-buttons .plus-button, #cart-main .cart tbody .cart__row .cart-item .plus-less-buttons .less-button {
+  color: #fff;
+  margin: auto;
+  padding: 5px 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+}
+#cart-main .cart tbody .cart__row .cart-item .plus-less-buttons .plus-button {
+  background-color: green;
+  margin-bottom: 1px;
+  font-size: 0.93rem;
+}
+#cart-main .cart tbody .cart__row .cart-item .plus-less-buttons .less-button {
+  background-color: red;
+}
+
+.empty-cart {
+  width: 100%;
+  margin: 0;
+  padding: 30px 0;
+  text-align: center;
 }
 
 /******************RESPONSIVE******************/
