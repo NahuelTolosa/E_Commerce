@@ -316,10 +316,12 @@
 #cart-main .cart tbody .cart__row .cart-item .plus-less-buttons .less-button {
   background-color: red;
 }
-#cart-main .cart tbody .cart__row .cart-item .trash-button {
+#cart-main .cart tbody .cart__row .trash-button {
+  width: fit-content;
+  margin: auto;
   transition: all 300ms;
 }
-#cart-main .cart tbody .cart__row .cart-item .plus-button:hover, #cart-main .cart tbody .cart__row .cart-item .less-button:hover, #cart-main .cart tbody .cart__row .cart-item .trash-button:hover {
+#cart-main .cart tbody .cart__row .plus-button:hover, #cart-main .cart tbody .cart__row .less-button:hover, #cart-main .cart tbody .cart__row .trash-button:hover {
   transform: scale(1.2);
   cursor: pointer;
 }

@@ -80,7 +80,6 @@ const AddToCart = item => {
 
     //Paso los datos del array al localSorage
     CartToLocalStorege();
-    // console.log(`Cart: ${cart}\n\n\nLocal: ${localStorage.getItem('cart')}`);
 
 }
 
@@ -95,8 +94,11 @@ function CartToLocalStorege() {
 }
 
 function PrintCart(){
-    if (IsOnCartPage())
-        ($.isEmptyObject(localStorage.getItem(`cart`))) ? EmptyCartMessage() : CreateCartNodes();
+    if (IsOnCartPage()){
+        LocalStorageToCar();
+        ($.isEmptyObject(cart)) ? EmptyCartMessage() : CreateCartNodes();
+    }
+
 }
 
 function EmptyCartMessage() {
@@ -105,17 +107,17 @@ function EmptyCartMessage() {
 
 function CreateCartNodes() {
 
-    let i = 0;
+    let i = 1;
 
-    for (const key in JSON.parse(localStorage.getItem(`cart`))) {
-        if (Object.hasOwnProperty.call(JSON.parse(localStorage.getItem(`cart`)), key)) {
-            const product = JSON.parse(localStorage.getItem(`cart`))[key];
+    for (const key in cart) {
+        if (Object.hasOwnProperty.call(cart, key)) {
+            const product = cart[key];
 
             $(`.cart-body`).append(`
-                <tr class="cart__row">
+                <tr id="${product.id}_row" class="cart__row">
                     <th class="cart-item">${i}</th>
                     <th class="cart-item">${product.name}</th>
-                    <th class="cart-item">${product.quantity}</th>
+                    <th id="quantity_${product.id}" class="cart-item">${product.quantity}</th>
                     <th class="cart-item">$${product.price}</th>
                     <th class="cart-item">
                         <div class="plus-less-buttons">
@@ -127,22 +129,26 @@ function CreateCartNodes() {
                             </div>
                         </div>
                     </th>
-                    <th class="cart-item"><span id="${product.id}" class="iconify trash-button" data-icon="clarity:trash-line"></span></th>
+                    <th class="cart-item">
+                        <div class="trash-button">
+                            <span id="${product.id}" class="iconify" data-icon="clarity:trash-line"></span>
+                        </div>
+                    </th>
                 </tr>
             `);
 
         i++;
 
         }
-
     }
+
     $(`.cart-body`).append(`
         <tr class="cart__row">
-            <th class="cart-item"><h5>Total:<h5></th>
+            <th class="cart-item"><h5><b>Total:</b><h5></th>
             <th class="cart-item"></th>
             <th class="cart-item"></th>
+            <th id="cart-total" class="cart-item"><h5><b>$${GetCartTotal()}</b><h5></th>
             <th class="cart-item"></th>
-            <th class="cart-item"><h5>$00000<h5></th>
             <th class="cart-item"></th>
         </tr>
     `);
@@ -153,43 +159,68 @@ function GetIntPrice(price) {
     return price.slice(1,price.lenght);
 }
 
-function SetActionButtonsOnCart() {
+function GetCartTotal() {
+    let total = 0;
 
-    cart = JSON.parse(localStorage.getItem(`cart`));
-    console.log(cart);
+    for (const key in cart) {
+        if (Object.hasOwnProperty.call(cart, key)) {
+            total += (cart[key].price * cart[key].quantity);
+        }
+    }
+
+    return total;
+}
+
+function SetActionButtonsOnCart() {
+    // console.log(cart);
 
     if(IsOnCartPage()){
         $(`.plus-button`).on("click",(e)=>{
             IncreaseAmount(e.target.id);
+            RefreshAmount(e.target.parentElement.parentElement.parentElement.parentElement, e.target.id);
+            UpdateLocalStorage();
+            UpdateCartTotal();
         });
 
         $(`.less-button`).on("click", (e) => {
             DecreaeseAmount(e.target.id);
+            RefreshAmount(e.target.parentElement.parentElement.parentElement.parentElement, e.target.id);
+            UpdateLocalStorage();
+            UpdateCartTotal();
         });
 
         $(`.trash-button`).on("click",(e)=>{
-
+            DeleteProduct(e.target.parentElement.parentElement.parentElement.parentElement, e.target.id);
+            UpdateLocalStorage();
+            UpdateCartTotal();
         });
     }
     
 }
 
 function IncreaseAmount(id) {
-    cart = JSON.parse(localStorage.getItem(`cart`));
     cart[id].quantity += 1;
-    CartToLocalStorege();
 }
 
 function DecreaeseAmount(id) {
-    cart = JSON.parse(localStorage.getItem(`cart`));
-    cart[id].quantity -= 1;
+    if (cart[id].quantity > 0)
+        cart[id].quantity -= 1;    
+}
+
+function DeleteProduct(html,id) {
+    html.querySelector(`#${id}_row`).remove();
+    delete cart[id];
+}
+
+function RefreshAmount(html,id) {
+    html.querySelector(`#quantity_${id}`).innerHTML = cart[id].quantity;
+}
+
+function UpdateLocalStorage() {
     CartToLocalStorege();
+    console.log(localStorage.getItem(`cart`));
 }
 
-function DeleteProduct() {
-    
-}
-
-function RefreshAmount() {
-    
+function UpdateCartTotal(){
+    document.querySelector(`#cart-total`).innerHTML = `<h5><b>$${GetCartTotal()}</b></h5>`;
 }
