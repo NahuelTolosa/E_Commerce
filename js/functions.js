@@ -1,13 +1,27 @@
 let cart = {};
 
-function ReadJSON() {
-    fetch('../json/db.json')
-        .then(res => res.json())
-        .then(json => {
-            CreateDinamicGrid(json);
-            BuyButtonListener(json); /*AGREGA LOS EVENTOS A LOS BOTONES DE COMPRA*/
+function ReadJSON(URL) {
+    // fetch('../json/db.json')
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         CreateDinamicGrid(json);
+    //         BuyButtonListener(json); /*AGREGA LOS EVENTOS A LOS BOTONES DE COMPRA*/
+    //     });
+        
+    $(function() {
+        $.ajax({
+            type: "GET",
+            url: URL,
+            success: function(data) {
+                CreateDinamicGrid(data);
+                BuyButtonListener(data); /*AGREGA LOS EVENTOS A LOS BOTONES DE COMPRA*/
+            }
         });
+    });
 }
+
+
+
 
 function CreateDinamicGrid(products){
     for (const product of products) { /*CREA LOS ELEMENTOS LEIDOS*/
@@ -16,7 +30,7 @@ function CreateDinamicGrid(products){
             if (product.isPopular)
                 CreateGridNodes(product, `${product.image}`);
         }
-
+        console.log(`../${product.image}`);
         if (IsOnProductsPage()){
             CreateGridNodes(product, `../${product.image}`);
         }
@@ -27,20 +41,20 @@ function CreateDinamicGrid(products){
 function CreateGridNodes(product,imgLocation){
     $(()=>{
         $('.grid-section').append(
-                `<div class="img-containter">
-                        <div class="img-containter__img">
-                            <img src="${imgLocation}" alt="${product.description}">
-                        </div>
-                        <div class="img-containter__info">
-                            <h4>${product.name}</h4>
-                            <p>$${product.price}</p>
-                        </div>
-                        <div class="img-container__option">
-                            <button class="button">Ver más</button>
-                            <button id="${product.id}" class="button buy-button">Comprar</button>
-                        </div>
-                    </div>`
-            );
+            `<div class="img-containter">
+                    <div class="img-containter__img">
+                        <img src="${imgLocation}" alt="${product.description}">
+                    </div>
+                    <div class="img-containter__info">
+                        <h4>${product.name}</h4>
+                        <p>$${product.price}</p>
+                    </div>
+                    <div class="img-container__option">
+                        <button class="button">Ver más</button>
+                        <button id="${product.id}" class="button buy-button">Comprar</button>
+                    </div>
+                </div>`
+        );
     });
     
 }
@@ -218,7 +232,7 @@ function RefreshAmount(html,id) {
 
 function UpdateLocalStorage() {
     CartToLocalStorege();
-    console.log(localStorage.getItem(`cart`));
+    // console.log(localStorage.getItem(`cart`));
 }
 
 function UpdateCartTotal(){
