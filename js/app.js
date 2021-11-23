@@ -1,2 +1,3 @@
 ReadJSON();
 PrintCart();
+SetActionButtonsOnCart();
